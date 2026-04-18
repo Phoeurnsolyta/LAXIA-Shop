@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <!-- font awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white font-poppins">
+    <!-- Navbar -->
+    <nav class="border-gray-100 bg-white sticky top-0 z-99">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center h-16 gap-6">
+          <!-- Logo -->
+          <a
+            href="/index.html"
+            class="flex-shrink-0 text-xl font-semibold tracking-tight text-gray-900"
+          >
+            LAX<span class="text-green-600">IA.</span>
+          </a>
+
+          <div class="hidden md:flex justify-center gap-5 flex-1">
+            <a
+              href="/index.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Home</a
+            >
+            <a
+              href="./products.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Products</a
+            >
+            <a
+              href="./blog.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Blog</a
+            >
+            <a
+              href="./about.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >About</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-2 ml-auto">
+            <!-- Language Switcher -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 hover:cursor-pointer text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-language"></i>
+            </button>
+
+            <!-- Dark Mode Toggle -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Divider -->
+            <div class="hidden md:block w-px h-5 bg-gray-200"></div>
+
+            <!-- Login / Register -->
+            <div class="hidden md:flex items-center gap-2">
+              <a
+                href="./login.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                Log in
+              </a>
+              <a
+                href="./register.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] bg-green-700 hover:bg-green-900 text-white text-sm font-medium transition-colors"
+              >
+                Register
+              </a>
+            </div>
+            <!-- MOBILE MENU BUTTON -->
+            <label for="menu-toggle" class="md:hidden text-xl cursor-pointer">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOGGLE -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- MOBILE MENU -->
+      <div class="md:hidden hidden peer-checked:block border-t bg-white">
+        <div class="px-6 py-5 space-y-4 text-sm">
+          <a href="/index.html" class="block">Home</a>
+          <a href="./products.html" class="block">Products</a>
+          <a href="./blog.html" class="block">Blog</a>
+          <a href="./about.html" class="block">About</a>
+
+          <div class="pt-4 border-t flex flex-col gap-3">
+            <a
+              href="./login.html"
+              class="px-4 py-2 border rounded-full text-center"
+              >Log in</a
+            >
+            <a
+              href="./register.html"
+              class="px-4 py-2 bg-green-700 text-white rounded-full text-center"
+              >Register</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- header -->
+    <header>
+      <section class="relative h-screen">
+        <div>
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="../imgs/blog poster2.jpg"
+            alt=""
+          />
+
+          <div
+            class="absolute inset-0 flex flex-col items-start text-left justify-center pl-10 md:pl-24"
+          >
+            <!-- Headline -->
+            <h1 class="text-3xl md:text-6xl font-bold leading-tight">
+              Skincare <br />
+              <span class="text-green-700">Tips & Insights</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="mt-4 text-base md:text-lg text-gray-500 leading-relaxed">
+              Explore expert advice, skincare routines, and solutions for every
+              skin <br />
+              concern from acne to hydration and beyond.
+            </p>
+
+            <div class="flex gap-4 mt-5 text-sm text-[#1e2e3e]">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-book-open"></i> Expert Guides
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-leaf"></i> Natural Tips
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-face-smile"></i> Real Solutions
+              </span>
+            </div>
+
+            <div class="mt-8 flex gap-4">
+              <div
+                class="h-11 px-6 inline-flex items-center rounded-full bg-green-700 hover:bg-green-800 text-white font-medium transition-colors shadow-md"
+              >
+                Read Blogs
+                <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+              </div>
+              <div
+                class="h-11 px-6 inline-flex items-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 font-medium transition-colors"
+              >
+                Explore Topics
+              </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="mt-8 flex items-center gap-6 text-sm text-[#1e2e3e]">
+              <div>
+                <div class="font-bold text-[28px]">6</div>
+                <div class="text-xs text-gray-500">Articles</div>
+              </div>
+
+              <div class="w-px h-8 bg-white/30"></div>
+
+              <div>
+                <div class="font-bold text-[28px]">100</div>
+                <div class="text-xs text-gray-500">Readers</div>
+              </div>
+
+              <div class="w-px h-8 bg-white/30"></div>
+
+              <div>
+                <div class="font-bold text-[28px]">4.8 ★</div>
+                <div class="text-xs text-gray-500">Avg Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- main -->
+    <main class="px-6 md:px-[110px] py-16">
+      <!-- card 1 -->
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          Skin Concerns
+        </h2>
+        <p class="text-gray-500 mt-3">Find solutions for your skin problems</p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Card 1 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/c7/ec/7b/c7ec7b5c6c7f02d74e3f2b7de00d8a50.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Acne Treatment Guide To Have Better Skin
+            </h3>
+            <p class="text-sm text-gray-500">
+              Learn how to treat acne and prevent breakouts effectively.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/9a/83/c0/9a83c0111c27bf13dcdf4c56928ffd08.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Dry Skin Care Routine
+            </h3>
+            <p class="text-sm text-gray-500">
+              Find the right balance with lightweight products and smart
+              skincare habits to control shine without drying your skin.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/08/50/d9/0850d9749cb6d2dad775b5efc6886eab.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Getting To Know Your Undertone
+            </h3>
+            <p class="text-sm text-gray-500">
+              The color of your veins plays a part in your skin's undertones.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <!-- card 4 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/5b/7e/67/5b7e670106331e971743e84d5ae1bdf8.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Chemical vs Physical vs Hybrid vs Mineral
+            </h3>
+            <p class="text-sm text-gray-500">
+              Keep your skin hydrated with these simple steps.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <!-- card 5 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/f2/a0/66/f2a06640f9336f79f0ed6c82e74280b3.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Aging & Fine Lines
+            </h3>
+            <p class="text-sm text-gray-500">
+              Keep your skin hydrated with these simple steps.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <!-- card 6 -->
+        <div class="group">
+          <a href="./blogdetail.html">
+            <img
+              src="https://i.pinimg.com/1200x/3c/00/6d/3c006d755ae13d3255252928f9863248.jpg"
+              class="overflow-hidden rounded-[20px] w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+            />
+          </a>
+
+          <div class="pt-5 space-y-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Sensitive & Irritated Skin
+            </h3>
+            <p class="text-sm text-gray-500">
+              Keep your skin hydrated with these simple steps.
+            </p>
+            <a
+              href="./blogdetail.html"
+              class="text-green-700 text-sm font-medium"
+            >
+              Read More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer section -->
+    <footer class="text-gray-500 mt-10 pb-8 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- BRAND -->
+          <div>
+            <a href="/index.html" class="text-xl font-semibold text-gray-900">
+              LAX<span class="text-green-700">IA.</span>
+            </a>
+            <p class="text-sm mt-3">
+              Natural beauty products crafted with care for your skin and the
+              planet.
+            </p>
+          </div>
+
+          <!-- SHOP -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Shop
+            </p>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/index.html" class="hover:text-black">Home</a></li>
+              <li>
+                <a href="./products.html" class="hover:text-black"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a href="./blog.html" class="hover:text-black">Blog</a>
+              </li>
+              <li>
+                <a href="./about.html" class="hover:text-black">About</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NEWSLETTER -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Newsletter
+            </p>
+            <p class="text-sm mb-3">Get the latest deals and beauty tips.</p>
+
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                class="flex-1 text-sm px-3 py-2 rounded-lg border border-gray-200 focus:border-green-500 outline-none"
+              />
+              <button
+                class="bg-green-700 hover:bg-green-800 text-white text-sm px-4 py-2 rounded-lg"
+              >
+                Go
+              </button>
+            </div>
+          </div>
+
+          <!-- LOGO -->
+          <div
+            class="flex flex-col items-start sm:items-center text-left sm:text-center"
+          >
+            <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+            <img
+              class="w-20 h-20 object-contain"
+              src="../imgs/istad-logo@0.5x.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="border-t pt-6 text-center text-xs text-gray-500">
+          © 2026 LAXIA. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

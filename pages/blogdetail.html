@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Details</title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <!-- font awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white font-poppins">
+    <!-- Navbar -->
+
+    <nav class="border-gray-100 bg-white sticky top-0 z-99">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center h-16 gap-6">
+          <!-- Logo -->
+          <a
+            href="/index.html"
+            class="flex-shrink-0 text-xl font-semibold tracking-tight text-gray-900"
+          >
+            LAX<span class="text-green-600">IA.</span>
+          </a>
+
+          <div class="hidden md:flex justify-center gap-5 flex-1">
+            <a
+              href="/index.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Home</a
+            >
+            <a
+              href="./products.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Products</a
+            >
+            <a
+              href="./blog.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Blog</a
+            >
+            <a
+              href="./about.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >About</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-2 ml-auto">
+            <!-- Language Switcher -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 hover:cursor-pointer text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-language"></i>
+            </button>
+
+            <!-- Dark Mode Toggle -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Divider -->
+            <div class="hidden md:block w-px h-5 bg-gray-200"></div>
+
+            <!-- Login / Register -->
+            <div class="hidden md:flex items-center gap-2">
+              <a
+                href="./login.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                Log in
+              </a>
+              <a
+                href="./register.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] bg-green-700 hover:bg-green-900 text-white text-sm font-medium transition-colors"
+              >
+                Register
+              </a>
+            </div>
+            <!-- MOBILE MENU BUTTON -->
+            <label for="menu-toggle" class="md:hidden text-xl cursor-pointer">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOGGLE -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- MOBILE MENU -->
+      <div class="md:hidden hidden peer-checked:block border-t bg-white">
+        <div class="px-6 py-5 space-y-4 text-sm">
+          <a href="/index.html" class="block">Home</a>
+          <a href="./products.html" class="block">Products</a>
+          <a href="./blog.html" class="block">Blog</a>
+          <a href="./about.html" class="block">About</a>
+
+          <div class="pt-4 border-t flex flex-col gap-3">
+            <a
+              href="./login.html"
+              class="px-4 py-2 border rounded-full text-center"
+              >Log in</a
+            >
+            <a
+              href="./register.html"
+              class="px-4 py-2 bg-green-700 text-white rounded-full text-center"
+              >Register</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="relative">
+      <img
+        src="https://i.pinimg.com/1200x/1c/91/4b/1c914b7b4a2e87b056bbb5f7d2c77f06.jpg"
+        class="w-full h-[60vh] object-cover"
+      />
+
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div
+        class="absolute bottom-10 left-6 md:left-[110px] text-white max-w-2xl"
+      >
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          Acne Treatment Guide To Have Better Skin
+        </h1>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="max-w-4xl mx-auto px-6 py-10">
+      <h1 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
+        Core Skincare Routine (Daily) To Reduced Your Acnes
+      </h1>
+
+      <div class="flex flex-wrap gap-3 text-xs text-gray-400 mt-4">
+        <span>LAXIA Admin</span>
+        <span>•</span>
+        <span>April 13, 2026</span>
+        <span>•</span>
+        <span>7 min read</span>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1200"
+        class="rounded-2xl mt-6 w-full object-cover"
+      />
+    </section>
+
+    <section
+      class="max-w-7xl mx-auto px-6 pb-20 flex flex-col lg:flex-row gap-10"
+    >
+      <!-- article -->
+      <article class="flex-1 space-y-6">
+        <p class="text-gray-600 leading-7">
+          Korean skincare focuses on hydration, prevention, and gentle care
+          rather than harsh treatments.
+        </p>
+
+        <h2 class="text-2xl font-bold font-serif">What is Korean Skincare?</h2>
+        <p class="text-gray-600 leading-7">
+          It is a routine based on layering lightweight products to improve skin
+          health over time.
+        </p>
+
+        <blockquote
+          class="border-l-4 border-green-600 bg-green-50 p-4 italic font-serif text-gray-800"
+        >
+          Healthy skin is built, not covered.
+        </blockquote>
+
+        <h2 class="text-2xl font-bold font-serif">Know Your Skin Type</h2>
+
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex gap-2">
+            <span class="text-green-600">•</span> Oily skin – shiny and
+            acne-prone
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-600">•</span> Dry skin – tight and flaky
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-600">•</span> Combination – mixed zones
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-600">•</span> Sensitive – easily irritated
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold font-serif">Core Routine</h2>
+
+        <div class="space-y-4 text-gray-600">
+          <div>
+            <h3 class="font-semibold text-gray-900">Cleanser</h3>
+            <p>Use a gentle cleanser that does not strip your skin.</p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900">Toner</h3>
+            <p>Hydrates and prepares your skin.</p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900">Serum</h3>
+            <p>Treats specific skin concerns.</p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900">Moisturizer + SPF</h3>
+            <p>Locks hydration and protects your skin.</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold font-serif">Final Thoughts</h2>
+        <p class="text-gray-600 leading-7">
+          Start simple and build consistency. That is the real secret of
+          skincare.
+        </p>
+      </article>
+    </section>
+
+    <!-- footer section -->
+    <footer class="text-gray-500 mt-10 pb-8 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- BRAND -->
+          <div>
+            <a href="/index.html" class="text-xl font-semibold text-gray-900">
+              LAX<span class="text-green-700">IA.</span>
+            </a>
+            <p class="text-sm mt-3">
+              Natural beauty products crafted with care for your skin and the
+              planet.
+            </p>
+          </div>
+
+          <!-- SHOP -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Shop
+            </p>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/index.html" class="hover:text-black">Home</a></li>
+              <li>
+                <a href="./products.html" class="hover:text-black"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a href="./blog.html" class="hover:text-black">Blog</a>
+              </li>
+              <li>
+                <a href="./about.html" class="hover:text-black">About</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NEWSLETTER -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Newsletter
+            </p>
+            <p class="text-sm mb-3">Get the latest deals and beauty tips.</p>
+
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                class="flex-1 text-sm px-3 py-2 rounded-lg border border-gray-200 focus:border-green-500 outline-none"
+              />
+              <button
+                class="bg-green-700 hover:bg-green-800 text-white text-sm px-4 py-2 rounded-lg"
+              >
+                Go
+              </button>
+            </div>
+          </div>
+
+          <!-- LOGO -->
+          <div
+            class="flex flex-col items-start sm:items-center text-left sm:text-center"
+          >
+            <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+            <img
+              class="w-20 h-20 object-contain"
+              src="../imgs/istad-logo@0.5x.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="border-t pt-6 text-center text-xs text-gray-500">
+          © 2026 LAXIA. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

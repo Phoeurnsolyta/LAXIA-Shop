@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <!-- font awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white font-poppins">
+    <!-- Navbar -->
+    <nav class="border-gray-100 bg-white sticky top-0 z-99 ">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center h-16 gap-6">
+          <!-- Logo -->
+          <a
+            href="/index.html"
+            class="flex-shrink-0 text-xl font-semibold tracking-tight text-gray-900"
+          >
+            LAX<span class="text-green-600">IA.</span>
+          </a>
+
+          <div class="hidden md:flex justify-center gap-5 flex-1">
+            <a
+              href="/index.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Home</a
+            >
+            <a
+              href="./pages/products.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Products</a
+            >
+            <a
+              href="./pages/blog.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >Blog</a
+            >
+            <a
+              href="./pages/about.html"
+              class="text-sm font-medium text-gray-500 hover:text-gray-900 px-3 py-1.5"
+              >About</a
+            >
+          </div>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-2 ml-auto">
+            <!-- Language Switcher -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 hover:cursor-pointer text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-language"></i>
+            </button>
+
+            <!-- Dark Mode Toggle -->
+            <button
+              class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Divider -->
+            <div class="hidden md:block w-px h-5 bg-gray-200"></div>
+
+            <!-- Login / Register -->
+            <div class="hidden md:flex items-center gap-2">
+              <a
+                href="./login.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                Log in
+              </a>
+              <a
+                href="./register.html"
+                class="h-9 px-4 inline-flex items-center rounded-[20px] bg-green-700 hover:bg-green-900 text-white text-sm font-medium transition-colors"
+              >
+                Register
+              </a>
+            </div>
+            <!-- MOBILE MENU BUTTON -->
+            <label for="menu-toggle" class="md:hidden text-xl cursor-pointer">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOGGLE -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- MOBILE MENU -->
+      <div class="md:hidden hidden peer-checked:block border-t bg-white">
+        <div class="px-6 py-5 space-y-4 text-sm">
+          <a href="/index.html" class="block">Home</a>
+          <a href="./pages/products.html" class="block">Products</a>
+          <a href="./pages/blog.html" class="block">Blog</a>
+          <a href="./pages/about.html" class="block">About</a>
+
+          <div class="pt-4 border-t flex flex-col gap-3">
+            <a
+              href="./pages/login.html"
+              class="px-4 py-2 border rounded-full text-center"
+              >Log in</a
+            >
+            <a
+              href="./pages/register.html"
+              class="px-4 py-2 bg-green-700 text-white rounded-full text-center"
+              >Register</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- header -->
+    <header>
+      <!-- hero section -->
+      <section class="relative overflow-hidden bg-[#f9fafb]">
+        <div
+          class="max-w-7xl mx-auto px-6 md:px-[110px] py-20 grid md:grid-cols-2 gap-12 items-center"
+        >
+          <!-- TEXT -->
+          <div>
+            <p class="text-green-700 text-sm font-semibold tracking-wide mb-3">
+              WELCOME TO LAXIA
+            </p>
+
+            <h1
+              class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+            >
+              Glow Naturally <br />
+              With <span class="text-green-700">Healthy Skin</span>
+            </h1>
+
+            <p class="mt-5 text-gray-500 max-w-md leading-relaxed">
+              Discover clean, effective skincare designed to nourish your skin
+              and boost your confidence every day.
+            </p>
+
+            <div class="mt-8 flex gap-4 flex-wrap">
+              <a
+                href="./pages/products.html"
+                class="bg-green-700 text-white px-6 py-3 rounded-full font-medium hover:bg-green-800 transition"
+              >
+                Start Shopping
+              </a>
+
+              <a
+                href="./pages/about.html"
+                class="border border-gray-300 px-6 py-3 rounded-full text-gray-700 hover:bg-gray-100 transition"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- IMAGE -->
+          <div class="relative flex justify-center items-center">
+            <!-- Soft background shape -->
+            <div
+              class="absolute w-[280px] h-[280px] md:w-[360px] md:h-[360px] bg-green-100 rounded-full blur-2xl"
+            ></div>
+
+            <!-- Model -->
+            <img
+              src="../imgs/blog hero_pic.png"
+              class="relative z-10 w-[280px] md:w-[400px] object-contain"
+              alt="Model"
+            />
+          </div>
+        </div>
+
+        <!-- Decorative blobs -->
+        <div
+          class="absolute -top-20 -right-20 w-72 h-72 bg-green-100 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute -bottom-20 -left-20 w-72 h-72 bg-green-100 rounded-full blur-3xl"
+        ></div>
+      </section>
+    </header>
+
+    <!-- main section -->
+    <main>
+      <div class="text-center pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-gray-900 mt-5 leading-normal"
+        >
+          Healty Skin Start From These<br />
+          Simple Routine.
+        </h2>
+      </div>
+
+      <!-- grid layout -->
+      <section class="max-w-7xl mx-auto px-6 pt-10 pb-10">
+        <div class="grid grid-cols-3 grid-rows-2 gap-5 h-[500px]">
+          <!-- img 1 -->
+          <div class="row-span-2 relative overflow-hidden rounded-2xl">
+            <img
+              src="https://i.pinimg.com/736x/fb/9f/49/fb9f4985bd430239c5bb6a57f3dd8528.jpg"
+              class="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+
+          <!-- img 2 -->
+          <div class="relative overflow-hidden rounded-2xl">
+            <img
+              src="https://i.pinimg.com/1200x/cd/23/89/cd23890bef89a05725cc1f2dff2c304b.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- img 3 -->
+          <div class="relative overflow-hidden rounded-2xl">
+            <img
+              src="https://i.pinimg.com/1200x/c0/40/f9/c040f9d002090e7050d5ad4f25ca4b0a.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- img 4 -->
+          <div class="col-span-2 relative overflow-hidden rounded-2xl">
+            <img
+              src="https://img.smartertravel.com/production/Articles/How%20Much%20SPF%20Do%20You%20Really%20Need/Feature/large_How_Much_SPF_Do_You_Really_Need_feature_image_48a8f0fb5d.webp"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- trending products section -->
+
+      <section class="bg-[#F5F5F5] py-15 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Trending Products
+            </h2>
+
+            <div class="flex justify-center gap-2 flex-wrap">
+              <button
+                class="border border-gray-50 text-sm px-5 py-1.5 rounded-full text-gray-500 hover:text-black hover:border-gray-500 cursor-pointer"
+              >
+                Featured
+              </button>
+              <button
+                class="border border-gray-50 text-sm px-5 py-1.5 rounded-full text-gray-500 hover:text-black hover:border-gray-500 cursor-pointer"
+              >
+                New Product
+              </button>
+              <button
+                class="border border-gray-50 text-sm px-5 py-1.5 rounded-full text-gray-500 hover:text-black hover:border-gray-500 cursor-pointer"
+              >
+                Top Selling
+              </button>
+            </div>
+          </div>
+
+          <!-- products card -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- Card 1 -->
+            <a href="/pages/productsdetail.html">
+              <div
+                class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+              >
+                <div class="relative overflow-hidden bg-[#f5f5f5]">
+                  <img
+                    src="./imgs/dr g.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Foundation"
+                  />
+                  <span
+                    class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                    >SALE</span
+                  >
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Add to cart
+                  </div>
+                </div>
+                <div class="p-3.5 leading-relaxed">
+                  <p class="text-[15px] font-bold font-poppins mb-1">Dr G</p>
+                  <p
+                    class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                  >
+                    Dr.G Red Blemish Clear Soothing Cream Soothing 70ml
+                  </p>
+                  <div class="flex items-center gap-1.5 mt-2">
+                    <p class="text-sm text-gray-400 line-through">US$33.60</p>
+                    <p class="text-sm font-semibold text-red-500">US$25.00</p>
+                  </div>
+                  <div class="flex items-center gap-1 mt-1.5">
+                    <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                    <span class="text-xs text-gray-500">4.9 (120)</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="/pages/productsdetail.html">
+              <div
+                class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+              >
+                <div class="relative overflow-hidden bg-[#f5f5f5]">
+                  <img
+                    src="./imgs/serum1.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Foundation"
+                  />
+                  <span
+                    class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                    >SALE</span
+                  >
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Add to cart
+                  </div>
+                </div>
+                <div class="p-3.5 leading-relaxed">
+                  <p class="text-[15px] font-bold font-poppins mb-1">Anua</p>
+                  <p
+                    class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                  >
+                    Peach 70% Niacinamide Serum 30ml Niacinamide Serum
+                  </p>
+                  <div class="flex items-center gap-1.5 mt-2">
+                    <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                    <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                  </div>
+                  <div class="flex items-center gap-1 mt-1.5">
+                    <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                    <span class="text-xs text-gray-500">4.9 (120)</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/sunscreen4.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Anua</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  Anua Zero-Cast Moisturizing Finish Sunscreen 50ml
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/lipstick1.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Peripera</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  Ink Mood Matte Tint 02 Coral Influencer
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/serum7.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Torriden</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  Torriden Dive In Serum 50mL
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/sunscreen1.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Anessa</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  ANESSA Perfect UV Sunscreen Skincare Milk 60ml
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 7 -->
+            <a
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/toner1.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Haruharu</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  Haruharu wonder Black Rice Hyaluronic Toner Free of Alcohol
+                  Fragrance 150ml
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 8 -->
+            <a​
+              href="./pages/productsdetail.html"
+              class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
+            >
+              <div class="relative overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="./imgs/mask2.jpg"
+                  class="w-full h-full object-contain"
+                  alt="Foundation"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-poppins px-2 py-0.5 rounded"
+                  >SALE</span
+                >
+                <div
+                  class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white text-xs text-center py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  Add to cart
+                </div>
+              </div>
+              <div class="p-3.5 leading-relaxed">
+                <p class="text-[15px] font-bold font-poppins mb-1">Mediheal</p>
+                <p
+                  class="text-sm font-normal text-gray-500 leading-snug line-clamp-2"
+                >
+                  MEDIHEAL Toner Pad 100 Pads(7types Madecassoside Collagen etc)
+                </p>
+                <div class="flex items-center gap-1.5 mt-2">
+                  <p class="text-sm text-gray-400 line-through">US$70.00</p>
+                  <p class="text-sm font-semibold text-red-500">US$50.00</p>
+                </div>
+                <div class="flex items-center gap-1 mt-1.5">
+                  <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">4.9 (120)</span>
+                </div>
+              </div>
+            </a​>
+          </div>
+
+          <!-- View all -->
+          <div class="text-center mt-10">
+            <a
+              href="/pages/products.html"
+              class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors"
+            >
+              View All Products <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- poster section -->
+      <section class="w-full my-10">
+        <div
+          class="relative overflow-hidden flex flex-col md:flex-row mx-4 sm:mx-6 lg:mx-[110px]"
+        >
+          <!-- IMAGE -->
+          <div class="w-full md:w-[55%] h-[220px] sm:h-[280px] md:h-[380px]">
+            <img
+              src="./imgs/yujin.jpg"
+              alt="Beauty model"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- CONTENT -->
+          <div
+            class="flex-1 bg-[#f2e9dd] flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-8 relative overflow-hidden"
+          >
+            <!-- shapes -->
+            <div
+              class="absolute -right-16 -bottom-16 w-56 h-56 rounded-full bg-[#5f7d69]"
+            ></div>
+            <div
+              class="absolute -right-6 top-6 w-24 h-24 rounded-full bg-[#5f7d69]"
+            ></div>
+
+            <div class="relative z-10 space-y-3 sm:space-y-4">
+              <!-- label -->
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-px bg-gray-600"></span>
+                <p
+                  class="text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-gray-600 uppercase"
+                >
+                  Special Offer
+                </p>
+              </div>
+
+              <!-- title -->
+              <div class="border-l-2 border-gray-700 pl-4">
+                <h2
+                  class="font-bold text-xl sm:text-2xl md:text-4xl text-gray-800 leading-tight"
+                >
+                  Beauty Inspired<br />By Real Life
+                </h2>
+              </div>
+
+              <!-- text -->
+              <p
+                class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-md"
+              >
+                Our company announced a new tagline and manifesto, to embrace
+                our dedication to fostering belonging among all clients.
+              </p>
+
+              <!-- buttons -->
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="/pages/products.html"
+                  class="bg-gray-800 hover:bg-gray-700 text-white text-xs sm:text-sm px-5 py-2.5 rounded-full"
+                >
+                  Shop Now
+                </a>
+                <a
+                  href="/pages/about.html"
+                  class="text-xs sm:text-sm text-gray-600 hover:text-gray-900 underline"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer section -->
+    <footer class="text-gray-500 mt-10 pb-8 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- BRAND -->
+          <div>
+            <a href="/index.html" class="text-xl font-semibold text-gray-900">
+              LAX<span class="text-green-700">IA.</span>
+            </a>
+            <p class="text-sm mt-3">
+              Natural beauty products crafted with care for your skin and the
+              planet.
+            </p>
+          </div>
+
+          <!-- SHOP -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Shop
+            </p>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/index.html" class="hover:text-black">Home</a></li>
+              <li>
+                <a href="/pages/products.html" class="hover:text-black"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a href="/pages/blog.html" class="hover:text-black">Blog</a>
+              </li>
+              <li>
+                <a href="/pages/about.html" class="hover:text-black">About</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NEWSLETTER -->
+          <div>
+            <p
+              class="text-sm font-semibold mb-4 uppercase tracking-wider text-gray-900"
+            >
+              Newsletter
+            </p>
+            <p class="text-sm mb-3">Get the latest deals and beauty tips.</p>
+
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                class="flex-1 text-sm px-3 py-2 rounded-lg border border-gray-200 focus:border-green-500 outline-none"
+              />
+              <button
+                class="bg-green-700 hover:bg-green-800 text-white text-sm px-4 py-2 rounded-lg"
+              >
+                Go
+              </button>
+            </div>
+          </div>
+
+          <!-- LOGO -->
+          <div
+            class="flex flex-col items-start sm:items-center text-left sm:text-center"
+          >
+            <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+            <img
+              class="w-20 h-20 object-contain"
+              src="./imgs/istad-logo@0.5x.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="border-t pt-6 text-center text-xs text-gray-500">
+          © 2026 LAXIA. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
