@@ -13,11 +13,119 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
       body {
         font-family: "Poppins", sans-serif;
         scroll-behavior: smooth;
+      }
+      body.dark {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+
+      /* Navbar */
+      body.dark nav {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark nav a,
+      body.dark nav button {
+        color: #e2e8f0;
+      }
+
+      body.dark nav a:hover {
+        color: #22c55e;
+      }
+
+      /* Sections */
+      body.dark .bg-\[\#f9fafb\],
+      body.dark .bg-\[\#F5F5F5\],
+      body.dark .bg-\[\#f2e9dd\] {
+        background-color: #020617;
+      }
+
+      /* Cards */
+      body.dark .bg-white {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark .bg-\[\#f5f5f5\] {
+        background-color: #020617;
+      }
+
+      body.dark .text-gray-900 {
+        color: #ffffff;
+      }
+
+      body.dark .text-gray-800 {
+        color: #f1f5f9;
+      }
+
+      body.dark .text-gray-700 {
+        color: #cbd5f5;
+      }
+
+      body.dark .text-gray-600,
+      body.dark .text-gray-500 {
+        color: #94a3b8;
+      }
+
+      body.dark .text-gray-400 {
+        color: #64748b;
+      }
+
+      /* Borders */
+      body.dark .border,
+      body.dark .border-gray-100,
+      body.dark .border-gray-200,
+      body.dark .border-t {
+        border-color: #1e293b;
+      }
+
+      /* Buttons */
+      body.dark .bg-gray-900 {
+        background-color: #1e293b;
+      }
+
+      body.dark .bg-gray-900:hover {
+        background-color: #334155;
+      }
+
+      body.dark .bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark input {
+        background-color: #020617;
+        border-color: #334155;
+        color: #e2e8f0;
+      }
+
+      body.dark input::placeholder {
+        color: #64748b;
+      }
+
+      /* Footer */
+      body.dark footer {
+        background-color: #020617;
+      }
+
+      body.dark .hover\:bg-gray-50:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .hover\:bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .shadow-md,
+      body.dark .hover\:shadow-md:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
@@ -69,9 +177,10 @@
 
             <!-- Dark Mode Toggle -->
             <button
+              onclick="toggleDark()"
               class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             >
-              <i class="fa-solid fa-moon"></i>
+              <i id="darkIcon" class="fa-solid fa-moon"></i>
             </button>
 
             <!-- Divider -->
@@ -126,7 +235,7 @@
         </div>
       </div>
     </nav>
-    <header class="relative">
+    <header class="relative" data-aos="fade-in">
       <img
         src="https://i.pinimg.com/1200x/1c/91/4b/1c914b7b4a2e87b056bbb5f7d2c77f06.jpg"
         class="w-full h-[60vh] object-cover"
@@ -137,7 +246,10 @@
       <div
         class="absolute bottom-10 left-6 md:left-[110px] text-white max-w-2xl"
       >
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+        <h1
+          class="text-3xl md:text-5xl font-bold leading-tight"
+          data-aos="fade-up"
+        >
           Acne Treatment Guide To Have Better Skin
         </h1>
       </div>
@@ -145,11 +257,18 @@
 
     <!-- HERO -->
     <section class="max-w-4xl mx-auto px-6 py-10">
-      <h1 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
+      <h1
+        data-aos="fade-up"
+        class="mt-4 text-2xl md:text-3xl font-bold leading-tight"
+      >
         Core Skincare Routine (Daily) To Reduced Your Acnes
       </h1>
 
-      <div class="flex flex-wrap gap-3 text-xs text-gray-400 mt-4">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="flex flex-wrap gap-3 text-xs text-gray-400 mt-4"
+      >
         <span>LAXIA Admin</span>
         <span>•</span>
         <span>April 13, 2026</span>
@@ -158,6 +277,8 @@
       </div>
 
       <img
+        data-aos="zoom-in"
+        data-aos-delay="150"
         src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1200"
         class="rounded-2xl mt-6 w-full object-cover"
       />
@@ -168,26 +289,31 @@
     >
       <!-- article -->
       <article class="flex-1 space-y-6">
-        <p class="text-gray-600 leading-7">
+        <p data-aos="fade-up" class="text-gray-600 leading-7">
           Korean skincare focuses on hydration, prevention, and gentle care
           rather than harsh treatments.
         </p>
 
-        <h2 class="text-2xl font-bold font-serif">What is Korean Skincare?</h2>
-        <p class="text-gray-600 leading-7">
+        <h2 data-aos="fade-up" class="text-2xl font-bold font-serif">
+          What is Korean Skincare?
+        </h2>
+        <p data-aos="fade-up" class="text-gray-600 leading-7">
           It is a routine based on layering lightweight products to improve skin
           health over time.
         </p>
 
         <blockquote
+          data-aos="fade-right"
           class="border-l-4 border-green-600 bg-green-50 p-4 italic font-serif text-gray-800"
         >
           Healthy skin is built, not covered.
         </blockquote>
 
-        <h2 class="text-2xl font-bold font-serif">Know Your Skin Type</h2>
+        <h2 data-aos="fade-up" class="text-2xl font-bold font-serif">
+          Know Your Skin Type
+        </h2>
 
-        <ul class="space-y-2 text-gray-600">
+        <ul data-aos="fade-up" class="space-y-2 text-gray-600">
           <li class="flex gap-2">
             <span class="text-green-600">•</span> Oily skin – shiny and
             acne-prone
@@ -203,9 +329,11 @@
           </li>
         </ul>
 
-        <h2 class="text-2xl font-bold font-serif">Core Routine</h2>
+        <h2 data-aos="fade-up" class="text-2xl font-bold font-serif">
+          Core Routine
+        </h2>
 
-        <div class="space-y-4 text-gray-600">
+        <div data-aos="fade-up" class="space-y-4 text-gray-600">
           <div>
             <h3 class="font-semibold text-gray-900">Cleanser</h3>
             <p>Use a gentle cleanser that does not strip your skin.</p>
@@ -227,8 +355,10 @@
           </div>
         </div>
 
-        <h2 class="text-2xl font-bold font-serif">Final Thoughts</h2>
-        <p class="text-gray-600 leading-7">
+        <h2 data-aos="fade-up" class="text-2xl font-bold font-serif">
+          Final Thoughts
+        </h2>
+        <p data-aos="fade-up" class="text-gray-600 leading-7">
           Start simple and build consistency. That is the real secret of
           skincare.
         </p>
@@ -236,7 +366,7 @@
     </section>
 
     <!-- footer section -->
-    <footer class="text-gray-500 mt-10 pb-8 w-full">
+    <footer class="text-gray-500 mt-10 pb-8 w-full pt-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <!-- BRAND -->
@@ -260,9 +390,7 @@
             <ul class="space-y-2 text-sm">
               <li><a href="/index.html" class="hover:text-black">Home</a></li>
               <li>
-                <a href="./products.html" class="hover:text-black"
-                  >Product</a
-                >
+                <a href="./products.html" class="hover:text-black">Product</a>
               </li>
               <li>
                 <a href="./blog.html" class="hover:text-black">Blog</a>
@@ -301,9 +429,10 @@
             class="flex flex-col items-start sm:items-center text-left sm:text-center"
           >
             <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+
             <img
-              class="w-20 h-20 object-contain"
-              src="../imgs/istad-logo@0.5x.jpg"
+              class="w-[150px] h-[150px] object-contain"
+              src="../imgs/istadlogo1.png"
               alt=""
             />
           </div>
@@ -315,5 +444,12 @@
         </div>
       </div>
     </footer>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="../script.js"></script>
   </body>
 </html>

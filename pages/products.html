@@ -13,11 +13,122 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
       body {
         font-family: "Poppins", sans-serif;
         scroll-behavior: smooth;
+      }
+      body.dark {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+
+      /* Navbar */
+      body.dark nav {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark nav a,
+      body.dark nav button {
+        color: #e2e8f0;
+      }
+
+      body.dark nav a:hover {
+        color: #22c55e;
+      }
+
+      /* Sections */
+      body.dark .bg-\[\#f9fafb\],
+      body.dark .bg-\[\#F5F5F5\],
+      body.dark .bg-\[\#f2e9dd\] {
+        background-color: #020617;
+      }
+
+      /* Cards */
+      body.dark .bg-white {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark .bg-\[\#f5f5f5\] {
+        background-color: #020617;
+      }
+
+      body.dark .text-gray-900 {
+        color: #ffffff;
+      }
+
+      body.dark .text-gray-800 {
+        color: #f1f5f9;
+      }
+
+      body.dark .text-gray-700 {
+        color: #cbd5f5;
+      }
+
+      body.dark .text-gray-600,
+      body.dark .text-gray-500 {
+        color: #94a3b8;
+      }
+
+      body.dark .text-gray-400 {
+        color: #64748b;
+      }
+
+      /* Borders */
+      body.dark .border,
+      body.dark .border-gray-100,
+      body.dark .border-gray-200,
+      body.dark .border-t {
+        border-color: #1e293b;
+      }
+
+      /* Buttons */
+      body.dark .bg-gray-900 {
+        background-color: #1e293b;
+      }
+
+      body.dark .bg-gray-900:hover {
+        background-color: #334155;
+      }
+
+      body.dark .bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark input {
+        background-color: #020617;
+        border-color: #334155;
+        color: #e2e8f0;
+      }
+
+      body.dark input::placeholder {
+        color: #64748b;
+      }
+
+      body.dark footer {
+        background-color: #020617;
+      }
+
+      body.dark .hover\:bg-gray-50:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .hover\:bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .shadow-md,
+      body.dark .hover\:shadow-md:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      }
+      body.dark .category-icon img {
+        filter: brightness(0) invert(1);
+        color: white;
       }
     </style>
   </head>
@@ -68,9 +179,10 @@
 
             <!-- Dark Mode Toggle -->
             <button
+              onclick="toggleDark()"
               class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             >
-              <i class="fa-solid fa-moon"></i>
+              <i id="darkIcon" class="fa-solid fa-moon"></i>
             </button>
 
             <!-- Divider -->
@@ -140,6 +252,7 @@
           >
             <!-- Headline -->
             <h1
+              data-aos="fade-right"
               class="text-3xl md:text-6xl font-bold text-[#1e2e3e] drop-shadow-lg leading-tight max-w-xl"
             >
               Discover Our <br />
@@ -148,6 +261,8 @@
 
             <!-- Subheadline -->
             <p
+              data-aos="fade-right"
+              data-aos-delay="150"
               class="mt-4 text-base md:text-lg text-gray-500 max-w-md leading-relaxed"
             >
               Confidence starts with healthy skin. Shop our premium skincare
@@ -155,7 +270,11 @@
             </p>
 
             <!-- Trust Badges -->
-            <div class="flex items-center gap-4 mt-5 text-sm text-gray-500">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="250"
+              class="flex items-center gap-4 mt-5 text-sm text-gray-500"
+            >
               <span class="flex items-center gap-1.5">
                 <i class="fa-solid fa-truck text-[#1e2e3e]"></i> Free Shipping
               </span>
@@ -170,7 +289,11 @@
             </div>
 
             <!-- CTA Buttons -->
-            <div class="mt-8 flex gap-4">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="350"
+              class="mt-8 flex gap-4"
+            >
               <a
                 href="#"
                 class="h-11 px-6 inline-flex items-center rounded-full bg-green-700 hover:bg-green-800 text-white font-medium transition-colors shadow-md"
@@ -187,36 +310,48 @@
             </div>
 
             <!-- Social Proof -->
-            <div class="mt-8 flex items-center gap-3">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="450"
+              class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 text-gray-800"
+            >
               <div class="mt-8 flex items-center gap-6 text-sm">
                 <!-- Rating -->
                 <div>
-                  <div class="font-bold text-[#1e2e3e] text-[34px]">4.9 ★</div>
-                  <div class="text-gray-500 text-xs">Average Rating</div>
+                  <div class="text-[#1e2e3e] font-bold text-2xl sm:text-3xl">
+                    4.9★
+                  </div>
+                  <div class="text-[#1e2e3e] text-xs">Average Rating</div>
                 </div>
 
                 <div class="w-px h-8 bg-gray-300"></div>
 
                 <!-- Customers -->
                 <div>
-                  <div class="font-bold text-[#1e2e3e] text-[34px]">200</div>
-                  <div class="text-gray-500 text-xs">Happy Customers</div>
+                  <div class="text-[#1e2e3e] font-bold text-2xl sm:text-3xl">
+                    200
+                  </div>
+                  <div class="text-[#1e2e3e] text-xs">Happy Customers</div>
                 </div>
 
                 <div class="w-px h-8 bg-gray-300"></div>
 
                 <!-- Orders -->
                 <div>
-                  <div class="font-bold text-[#1e2e3e] text-[34px]">5000</div>
-                  <div class="text-gray-500 text-xs">Orders Delivered</div>
+                  <div class="text-[#1e2e3e] font-bold text-2xl sm:text-3xl">
+                    5000
+                  </div>
+                  <div class="text-[#1e2e3e] text-xs">Orders Delivered</div>
                 </div>
 
                 <div class="w-px h-8 bg-gray-300"></div>
 
                 <!-- Products -->
                 <div>
-                  <div class="font-bold text-[#1e2e3e] text-[34px]">200+</div>
-                  <div class="text-gray-500 text-xs">Products Available</div>
+                  <div class="text-[#1e2e3e] font-bold text-2xl sm:text-3xl">
+                    200+
+                  </div>
+                  <div class="text-[#1e2e3e] text-xs">Products Available</div>
                 </div>
               </div>
             </div>
@@ -228,7 +363,9 @@
     <!-- main -->
     <main>
       <!-- category list -->
-      <section class="py-10 bg-white border-b border-gray-100 mt-5 mb-15">
+      <section
+        class="category-icon py-10 bg-white border-b border-gray-100 mt-5 mb-15"
+      >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-center text-3xl font-extrabold text-[#1e2e3e] mt-10 mb-15"
@@ -237,7 +374,11 @@
           </h2>
 
           <!-- Categories -->
-          <div class="flex items-center justify-center md:gap-10 flex-wrap">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="flex items-center justify-center md:gap-10 flex-wrap"
+          >
             <!-- Moisturizer -->
             <div class="flex flex-col items-center mx-[20px] group">
               <div
@@ -352,12 +493,16 @@
           </div>
         </div>
       </section>
-
+      <!-- poster section -->
       <section class="w-full mb-10">
         <div
-          class="relative overflow-hidden h-[260px] sm:h-[320px] md:h-[380px] flex mx-[110px] justify-center items-center"
+          class="relative overflow-hidden flex flex-col md:flex-row mx-4 sm:mx-6 lg:mx-[110px]"
         >
-          <div class="relative w-100% sm:w-[55%]">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            class="w-full md:w-[55%] h-[220px] sm:h-[280px] md:h-[380px]"
+          >
             <img
               src="https://i.pinimg.com/736x/7b/24/5b/7b245beb1d1b943aa258c0b8a5979034.jpg"
               alt="Beauty model"
@@ -366,6 +511,8 @@
           </div>
 
           <div
+            data-aos="fade-left"
+            data-aos-delay="100"
             class="flex-1 flex flex-col justify-center sm:px-12 lg:px-16 relative overflow-hidden"
           >
             <div
@@ -422,10 +569,10 @@
         </div>
       </section>
 
-      <section class="mx-[110px]">
+      <section class="py-15 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 pt-15">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Best Deal In The Store
             </h2>
 
@@ -435,9 +582,11 @@
           </div>
 
           <!-- products card -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Card 1 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="0"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -480,6 +629,8 @@
 
             <!-- Card 2 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="100"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -519,6 +670,8 @@
 
             <!-- Card 3 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="200"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -559,6 +712,8 @@
 
             <!-- Card 4 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="300"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -600,20 +755,20 @@
       </section>
 
       <!-- our picks section -->
-      <section class="mx-[110px]">
+      <section class="py-15 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-10">
-            <h2
-              class="text-3xl flex justify-baseline md:text-4xl font-bold text-gray-900 mb-6 pt-15"
-            >
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our Picks
             </h2>
           </div>
 
           <!-- products card -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Card 1 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="0"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -653,6 +808,8 @@
 
             <!-- Card 2 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="100"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -694,6 +851,8 @@
 
             <!-- Card 3 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="200"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -733,6 +892,8 @@
 
             <!-- Card 4 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="300"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -774,20 +935,20 @@
       </section>
 
       <!-- recommendation section -->
-      <section class="mx-[110px]">
+      <section class="py-15 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-10">
-            <h2
-              class="text-3xl flex justify-baseline md:text-4xl font-bold text-gray-900 mb-6 pt-15"
-            >
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Recommendations
             </h2>
           </div>
 
           <!-- products card -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Card 1 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="0"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -827,6 +988,8 @@
 
             <!-- Card 2 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="100"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -867,6 +1030,8 @@
 
             <!-- Card 3 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="200"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -909,6 +1074,8 @@
 
             <!-- Card 4 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="300"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -951,7 +1118,7 @@
     </main>
 
     <!-- footer section -->
-    <footer class="text-gray-500 mt-10 pb-8 w-full">
+    <footer class="text-gray-500 mt-10 pb-8 w-full pt-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <!-- BRAND -->
@@ -975,9 +1142,7 @@
             <ul class="space-y-2 text-sm">
               <li><a href="/index.html" class="hover:text-black">Home</a></li>
               <li>
-                <a href="./products.html" class="hover:text-black"
-                  >Product</a
-                >
+                <a href="./products.html" class="hover:text-black">Product</a>
               </li>
               <li>
                 <a href="./blog.html" class="hover:text-black">Blog</a>
@@ -1016,9 +1181,10 @@
             class="flex flex-col items-start sm:items-center text-left sm:text-center"
           >
             <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+
             <img
-              class="w-20 h-20 object-contain"
-              src="../imgs/istad-logo@0.5x.jpg"
+              class="w-[150px] h-[150px] object-contain"
+              src="../imgs/istadlogo1.png"
               alt=""
             />
           </div>
@@ -1030,5 +1196,11 @@
         </div>
       </div>
     </footer>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="../script.js"></script>
   </body>
 </html>

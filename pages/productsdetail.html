@@ -13,11 +13,120 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
       body {
         font-family: "Poppins", sans-serif;
         scroll-behavior: smooth;
+      }
+
+      body.dark {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+
+      /* Navbar */
+      body.dark nav {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark nav a,
+      body.dark nav button {
+        color: #e2e8f0;
+      }
+
+      body.dark nav a:hover {
+        color: #22c55e;
+      }
+
+      /* Sections */
+      body.dark .bg-\[\#f9fafb\],
+      body.dark .bg-\[\#F5F5F5\],
+      body.dark .bg-\[\#f2e9dd\] {
+        background-color: #020617;
+      }
+
+      /* Cards */
+      body.dark .bg-white {
+        background-color: #020617;
+        border-color: #1e293b;
+      }
+
+      body.dark .bg-\[\#f5f5f5\] {
+        background-color: #020617;
+      }
+
+      body.dark .text-gray-900 {
+        color: #ffffff;
+      }
+
+      body.dark .text-gray-800 {
+        color: #f1f5f9;
+      }
+
+      body.dark .text-gray-700 {
+        color: #cbd5f5;
+      }
+
+      body.dark .text-gray-600,
+      body.dark .text-gray-500 {
+        color: #94a3b8;
+      }
+
+      body.dark .text-gray-400 {
+        color: #64748b;
+      }
+
+      /* Borders */
+      body.dark .border,
+      body.dark .border-gray-100,
+      body.dark .border-gray-200,
+      body.dark .border-t {
+        border-color: #1e293b;
+      }
+
+      /* Buttons */
+      body.dark .bg-gray-900 {
+        background-color: #1e293b;
+      }
+
+      body.dark .bg-gray-900:hover {
+        background-color: #334155;
+      }
+
+      body.dark .bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark input {
+        background-color: #020617;
+        border-color: #334155;
+        color: #e2e8f0;
+      }
+
+      body.dark input::placeholder {
+        color: #64748b;
+      }
+
+      /* Footer */
+      body.dark footer {
+        background-color: #020617;
+      }
+
+      body.dark .hover\:bg-gray-50:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .hover\:bg-gray-100:hover {
+        background-color: #1e293b;
+      }
+
+      body.dark .shadow-md,
+      body.dark .hover\:shadow-md:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
@@ -68,9 +177,10 @@
 
             <!-- Dark Mode Toggle -->
             <button
+              onclick="toggleDark()"
               class="flex items-center gap-1.5 h-9 px-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             >
-              <i class="fa-solid fa-moon"></i>
+              <i id="darkIcon" class="fa-solid fa-moon"></i>
             </button>
 
             <!-- Divider -->
@@ -146,14 +256,12 @@
 
     <!-- product section -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-      <div
-        class="grid product-grid gap-10 lg:gap-16"
-        style="grid-template-columns: 1fr 1fr"
-      >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
         <div class="flex flex-col-reverse sm:flex-row gap-4">
           <!-- Main product -->
           <div
-            class="relative flex-1 rounded-2xl overflow-hidden flex items-center justify-center min-h-[320px] sm:min-h-[420px]"
+            data-aos="fade-right"
+            class="relative flex-1 rounded-2xl overflow-hidden flex items-center justify-center min-h-[280px] sm:min-h-[420px]"
           >
             <span
               class="absolute top-3 left-3 bg-green-600 text-white text-[10px] font-semibold px-2.5 py-1 rounded-full z-10"
@@ -168,7 +276,7 @@
         </div>
 
         <!-- info product -->
-        <div class="flex flex-col gap-5">
+        <div data-aos="fade-left" class="flex flex-col gap-5">
           <div>
             <p
               class="text-xs font-medium text-green-700 uppercase tracking-widest mb-1"
@@ -176,7 +284,7 @@
               DR G
             </p>
             <h1
-              class="text-2xl sm:text-3xl font-bold text-[#1e2e3e] leading-tight"
+              class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight"
             >
               Dr.G Red Blemish Clear Soothing Cream 70ml
             </h1>
@@ -195,7 +303,7 @@
 
           <!-- Price -->
           <div class="flex items-baseline gap-3">
-            <span class="text-2xl font-bold text-[#1e2e3e]">US$48.00</span>
+            <span class="text-2xl font-bold text-gray-800">US$48.00</span>
             <span class="text-base text-gray-400 line-through">US$60.00</span>
             <span
               class="bg-red-100 text-red-600 text-xs font-semibold px-2 py-0.5 rounded-full"
@@ -204,7 +312,7 @@
           </div>
 
           <!-- Description -->
-          <p class="text-sm text-gray-500 leading-relaxed">
+          <p class="text-sm text-gray-800 leading-relaxed">
             Made with ultra fine moisture particles to allow moisture absorption
             up to the 10th layer in skin. Experience 100-hour lasting
             moisturizing and moisture content of skin. Completed skin irritation
@@ -279,18 +387,20 @@
       </div>
 
       <!-- product section -->
-      <section class="mx-[110px]">
+      <section class="py-15 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-10">
-            <h2
-              class="text-2xl flex text-center justify-center md:text-3xl font-bold text-gray-900 mb-6 pt-15"
-            >
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               You May Also Like
             </h2>
           </div>
 
           <!-- products card -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="0"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
             <!-- Card 1 -->
             <div
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
@@ -331,6 +441,8 @@
 
             <!-- Card 2 -->
             <div
+              data-aos="fade-up"
+              data-aos-delay="100"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
               <div class="relative overflow-hidden bg-[#f5f5f5]">
@@ -370,6 +482,8 @@
 
             <!-- Card 3 -->
             <div
+              data-aos="fade-up"
+              data-aos-delay="200"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
               <div class="relative overflow-hidden bg-[#f5f5f5]">
@@ -411,6 +525,8 @@
 
             <!-- Card 4 -->
             <div
+              data-aos="fade-up"
+              data-aos-delay="300"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
               <div class="relative overflow-hidden bg-[#f5f5f5]">
@@ -456,7 +572,7 @@
         </div>
       </div>
 
-      <div id="tab-desc" class="tab-panel active py-8">
+      <div data-aos="fade-up" id="tab-desc" class="tab-panel active py-8">
         <div class="max-w-3xl space-y-4 text-sm text-gray-600 leading-relaxed">
           <p>
             Made with ultra fine moisture particles to allow moisture absorption
@@ -492,7 +608,12 @@
         </div>
       </div>
 
-      <div id="tab-info" class="tab-panel py-8">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        id="tab-info"
+        class="tab-panel py-8"
+      >
         <div class="overflow-x-auto rounded-xl border border-gray-100">
           <table class="w-full text-sm">
             <thead>
@@ -555,18 +676,20 @@
       </div>
 
       <!-- product section -->
-      <section class="mx-[110px]">
+      <section class="py-15 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-10">
-            <h2
-              class="text-3xl flex text-center justify-center md:text-3xl font-bold text-gray-900 mb-6 pt-15"
-            >
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Trending Products In Our Store
             </h2>
           </div>
 
           <!-- products card -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="0"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
             <!-- Card 1 -->
             <a
               href="../pages/productsdetail.html"
@@ -608,6 +731,8 @@
 
             <!-- Card 2 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="100"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -647,6 +772,8 @@
 
             <!-- Card 3 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="200"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -686,6 +813,8 @@
 
             <!-- Card 4 -->
             <a
+              data-aos="fade-up"
+              data-aos-delay="300"
               href="../pages/productsdetail.html"
               class="bg-white rounded-[20px] overflow-hidden group cursor-pointer border border-gray-100 hover:border-gray-200 hover:shadow-md"
             >
@@ -730,7 +859,7 @@
     </main>
 
     <!-- footer section -->
-    <footer class="text-gray-500 mt-10 pb-8 w-full">
+    <footer class="text-gray-500 mt-10 pb-8 w-full pt-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <!-- BRAND -->
@@ -754,9 +883,7 @@
             <ul class="space-y-2 text-sm">
               <li><a href="/index.html" class="hover:text-black">Home</a></li>
               <li>
-                <a href="./products.html" class="hover:text-black"
-                  >Product</a
-                >
+                <a href="./products.html" class="hover:text-black">Product</a>
               </li>
               <li>
                 <a href="./blog.html" class="hover:text-black">Blog</a>
@@ -795,9 +922,10 @@
             class="flex flex-col items-start sm:items-center text-left sm:text-center"
           >
             <p class="text-sm text-gray-800 mb-3">Sponsor and Organized by</p>
+
             <img
-              class="w-20 h-20 object-contain"
-              src="../imgs/istad-logo@0.5x.jpg"
+              class="w-[150px] h-[150px] object-contain"
+              src="../imgs/istadlogo1.png"
               alt=""
             />
           </div>
@@ -809,5 +937,12 @@
         </div>
       </div>
     </footer>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="../script.js"></script>
   </body>
 </html>
